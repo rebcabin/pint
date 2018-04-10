@@ -1,4 +1,3 @@
-import hypothesis.strategies as s
 import numpy as np
 
 from pint import UnitRegistry
