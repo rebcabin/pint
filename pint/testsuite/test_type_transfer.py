@@ -9,7 +9,7 @@ def test_type_locally():
     """If I have a quantity foo, I can test its type in this module by the
     normal, expected method."""
     foo = units.Quantity(42, 'm/s')
-    assert type(foo) is units.Quantity
+    assert isinstance(foo, units.Quantity)
 
 
 def test_type_other_module():
@@ -21,7 +21,7 @@ def test_type_other_module():
     I need some way to test the types of Pint quantities inside and outside
     collections."""
     foo = units.Quantity(42, 'm/s')
-    assert is_pint_quantity(type(foo))
+    assert is_pint_quantity(foo)
 
 
 def test_type_other_module_workaround():
@@ -32,5 +32,5 @@ def test_type_other_module_workaround():
     robust workaround, however, as it depends on changeable details of the
     implementation."""
     foo = units.Quantity(42, 'm/s')
-    assert is_pint_quantity_by_string(type(foo))
+    assert is_pint_quantity_by_string(foo)
 
